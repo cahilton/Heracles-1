@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>$appName</h1>
+	<div class="well">$appMessage</div>
+</div>
+
+
+
+
+

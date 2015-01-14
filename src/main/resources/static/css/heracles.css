@@ -1,0 +1,16 @@
+.sub-text {
+	color: #BEEDF6;
+}
+
+.jumbotron {
+	background: #13A0BA;
+    color: white;
+}
+
+.large-input {
+	padding: 10px;
+    font-size: 15pt;
+    line-height: 2.45;
+    height: 50px;
+}
+

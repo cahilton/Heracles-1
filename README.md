@@ -1,3 +1,5 @@
+####Development is still in progress for this project.
+
 ###Heracles
 Heracles is a cohort analysis tool that utilizes the OMOP Common Data Model (CDM) v5 to allow users to:
 
@@ -6,14 +8,5 @@ Heracles is a cohort analysis tool that utilizes the OMOP Common Data Model (CDM
 * Run and manage analyses (jobs)
 * Display analysis results through data visualization
 
-
-
-
-
-
-
-
-
-
-
-
+##Running the project
+Heracles is a [Spring Boot](http://projects.spring.io/spring-boot/) project. It can be built with Maven and packaged into a runnable jar.

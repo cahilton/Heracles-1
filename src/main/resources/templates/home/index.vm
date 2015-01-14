@@ -1,25 +1,61 @@
-<div class="container">
-	<div class="row" style="margin-top:10px">
-		<div class="col-md-12">
-          <div class="jumbotron">
-            <h1>$appName</h1>
-            <p class="sub-text">$appMessage</p>
-          </div>
-        </div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-2">
-			&nbsp;
+<div>
+	<div class="container" >
+		<!-- Header and app info -->
+		<div class="row" style="margin-top:10px">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+	          <div class="jumbotron">
+	            <h2>$appName</h2>
+	            <p class="sub-text">$appMessage</p>
+	          </div>
+	        </div>
+	        <div class="col-md-1"></div>
 		</div>
-		<div class="col-md-8">
-			<div id="cohorts-typeahead">
-				<input id="cohorts" type="text" placeholder="Search Cohorts" 
-					class="form-control large-input typeahead" />
+		
+		<!-- Cohort search bar -->
+		<div id="cohort-search" class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div id="cohorts-typeahead">
+					<input id="cohorts" type="text" placeholder="Search Cohorts" 
+						class="form-control large-input typeahead" />
+				</div>
 			</div>
+			<div class="col-md-2"></div>
 		</div>
-		<div class="col-md-2">
-			&nbsp;
+		
+		<!-- Cohort Explorer -->
+		<div id="cohort-explorer-main" class="row" style="display:none" ng-controller="CohortExplorerCtrl">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-12">
+						<a id="cohort-explorer-back">&laquo;Back</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div style="padding-left:5%">
+							<h3 id="cohort-name">{{cohort.name}}
+								<small data-toggle="tooltip" data-placement="bottom" title="{{cohort.description}}">
+									<a class="definition">definition</a>
+								</small>
+							</h3>
+							<div>
+								<div><label style="text-decoration:underline">Summary</label></div>
+								<div><label class="cohort-desc">Total Patients: </label>{{cohort.total_patients}}</div>
+								<div><label class="cohort-desc">Mean Observation Period: </label>{{cohort.mean_obs_period}}</div>
+								<div><label class="cohort-desc">Mean Age: </label>{{cohort.mean_age}}</div>
+								<div><label class="cohort-desc">% Female: </label>{{cohort.gender_distribution.female}}%</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
 		</div>
 	</div>
 </div>

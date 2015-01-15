@@ -5,15 +5,15 @@
 	"mean_age":32,
 	"mean_obs_period":"21 mos",
 	"gender_distribution": {
-		"male":57,
-		"female":43
+		"Male":57,
+		"Female":43
 	},
 	"age_distribution" : {
-		"65plus":20,
-		"50to64":23,
-		"35to49":17,
-		"18to34":25,
-		"18less":15
+		"> 65 yrs":20,
+		"50 to 64 yrs":23,
+		"35 to 49 yrs":17,
+		"18 to 34 yrs":25,
+		"< 18 yrs":15
 	},
 	"analyses": [
 	

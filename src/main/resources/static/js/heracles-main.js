@@ -96,7 +96,7 @@ $(document).ready(function() {
     $("#cohorts-typeahead").bind('typeahead:selected', function(obj, datum, name) {
         $("#cohorts").val(datum.name);
 
-        $("#cohort-search").slideUp("fast", function() {
+        $(".page-one").slideUp("fast", function() {
         	// set page data
         	angular.element($('#cohort-explorer-main')).scope().showCohort(datum);
 
@@ -109,7 +109,7 @@ $(document).ready(function() {
     // go back listener on cohort explorer
     $("#cohort-explorer-back").click(function() {
     	$("#cohort-explorer-main").slideUp("fast", function() {
-            $("#cohort-search").slideDown('fast'), function() {
+            $(".page-one").slideDown('fast'), function() {
                 setTimeout(function(){
                 	$("#cohorts-typeahead").focus();
                 }, 3000);
@@ -118,17 +118,6 @@ $(document).ready(function() {
     });
     
     // set up auto checkbox filters
-    // init multiselect w/ checkboxes
-    $(function() {
-        $(".multiselect").multiselect();
-    });
-    // init filters
-    $(function() {
-    	$(".multiselect").each(function() {
-    		var filterKey = $(this).attr("filter-key");
-    		$(this).filterByText($(".auto-filter-check-list-input[filter-key='" + filterKey + "']"), true);
-    	});
-    });
     //setup select/clear filters events
     $(".auto-filter-check-list-select").click(function() {
         toggleVisibleReports(true, ".multiselect[filter-key='" + $(this).attr("filter-key") + "']");
@@ -138,10 +127,10 @@ $(document).ready(function() {
         toggleVisibleReports(false, ".multiselect[filter-key='" + $(this).attr("filter-key") + "']");
         return false;
     });
-    // parents check and uncheck children
-    $(".auto-filter-check-list-parent-box").change(function() {
-        var checked = $(this).prop("checked");
-        $("input[parent='" + $(this).val() + "']:visible").prop("checked", checked);
+    // trigger parent click
+    $(".toggle-parent-label").click(function() {
+    	  var checked = $(this).prop("checked");
+          $("input[parent='" + $(this).val() + "']:visible").prop("checked", checked);
     });
 
 
@@ -149,4 +138,16 @@ $(document).ready(function() {
     setTimeout(function(){
     	$("#cohorts-typeahead").focus();
     }, 3000);
+});
+
+// init multiselect w/ checkboxes
+$(function() {
+    $(".multiselect").multiselect();
+});
+// init filters
+$(function() {
+	$(".multiselect").each(function() {
+		var filterKey = $(this).attr("filter-key");
+		$(this).filterByText($(".auto-filter-check-list-input[filter-key='" + filterKey + "']"), true);
+	});
 });

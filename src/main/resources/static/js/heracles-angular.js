@@ -19,8 +19,11 @@
 	    			   res.data.new_cohorts[this.category].push(this);
   	    		   }
   	    	   });
-  	    	   $scope.cohort = res.data;                
+  	    	   $scope.cohort = res.data;      
+  	    	 showAgeDistribution(res.data.age_distribution);
+  	    	 showGenderDistribution(res.data.gender_distribution);
   	        });
     	}
+    	
     });
 }());

@@ -69,5 +69,10 @@ a {
 	background-color: #000099;
 }
 
+.analyses-button {
+	margin-top:10px;
+}
 
-
+.d3-wrapper {
+	text-align: center;
+}

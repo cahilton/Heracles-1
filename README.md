@@ -9,4 +9,4 @@ Heracles is a cohort analysis tool that utilizes the OMOP Common Data Model (CDM
 * Display analysis results through data visualization
 
 ##Running the project
-Heracles is a [Spring Boot](http://projects.spring.io/spring-boot/) project. It can be built with Maven and packaged into a runnable jar.
+Heracles is a [Spring Boot](http://projects.spring.io/spring-boot/) project. It can be built with Maven and packaged into a runnable jar. See `demo/` for a early preview version, served up with static data. Seach for 'Schizophrenia'.

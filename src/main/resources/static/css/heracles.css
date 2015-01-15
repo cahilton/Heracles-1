@@ -36,5 +36,38 @@ a {
 	text-decoration: underline;	
 	padding: 2px 10px;
 }
+
+ .toggle-child-label {
+ 	font-weight:normal;
+ 	padding-left:40px;
+ 	cursor:pointer;
+ }
+ 
+.toggle-parent-label {
+	cursor:pointer;
 }
+ 
+ 
+.toggle-filter-control {
+	font-size: 90%;
+	background-color:#aaa;
+}
+ 
+.multiselect {
+	width: 20em;
+	height: 15em;
+	border: solid 1px #c0c0c0;
+	overflow: auto;
+}
+
+.multiselect label {
+	display: block;
+}
+
+.multiselect-on {
+	color: #ffffff;
+	background-color: #000099;
+}
+
+
 

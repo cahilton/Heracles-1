@@ -40,6 +40,24 @@
 			"id":4,
 			"done":true,
 			"category":"COHORT-SPECIFIC ANALYSES"
+		},
+		{ 
+			"name":"Number of persons by age, with age at cohort start",
+			"id":5,
+			"done":true,
+			"category":"COHORT-SPECIFIC ANALYSES"
+		},
+		{ 
+			"name":"Distribution of age at cohort start by gender",
+			"id":6,
+			"done":false,
+			"category":"COHORT-SPECIFIC ANALYSES"
+		},
+		{ 
+			"name":"Distribution of age at cohort start by cohort start year",
+			"id":7,
+			"done":true,
+			"category":"COHORT-SPECIFIC ANALYSES"
 		}
 	]	
 	

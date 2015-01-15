@@ -16,7 +16,7 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
                 }
                 */
                 var childText = child.find("input").attr("value");
-                if (childText.match(regex) !== null) {
+                if (childText && childText.match(regex) !== null) {
                     child.show();
                     var parent = child.find("input").attr("parent");
                     if (parent && shown.indexOf(parent) < 0) {

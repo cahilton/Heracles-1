@@ -2,7 +2,7 @@
 	<!-- This is velocity templating combined with angular data binding, so it's a bit much, but it keeps from duplicating all this code -->
 	<div class="row">
 		<div class="col-md-10">
-			<span id="toggle-$filterKey-filter-span" filter-key="$filterKey">
+			<span class="toggle-filter-span" filter-key="$filterKey">
 				 <input placeholder="Type to filter..." type="text" class="form-control auto-filter-check-list-input" style="margin-top:8px" filter-key="$filterKey"/>
 			     <div class="multiselect form-control" style="margin:3px;height:150px;overflow-y:auto;width:100%;" filter-key="$filterKey">
 			     	<div ng-repeat="$ngRepeat">
@@ -87,7 +87,7 @@
                                 <div>
                                     <label class="cohort-desc">Mean Age: </label>{{cohort.mean_age}}</div>
                                 <div>
-                                    <label class="cohort-desc">% Female: </label>{{cohort.gender_distribution.female}}%</div>
+                                    <label class="cohort-desc">% Female: </label>{{cohort.gender_distribution.Female}}%</div>
                             </div>
                             <div class="row">
 	                            <div class="col-md-12">

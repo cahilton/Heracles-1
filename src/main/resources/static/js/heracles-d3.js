@@ -72,7 +72,7 @@ function showAgeDistribution(ageData) {
 		d.outerRadius = r;
 		var centroid = (arc.centroid(d));
 		centroid[1] += 20;
-		console.log(centroid);
+		//console.log(centroid);
 		return "translate(" + centroid + ")";})
 		    .attr("text-anchor", "middle")
 		    .attr("fill", "white")

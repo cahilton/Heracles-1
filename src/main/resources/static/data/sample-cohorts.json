@@ -1,27 +1,38 @@
 [
     {
-        "name": "Breast Cancer s/p Mastectomy",
-        "description": "Patients with a history of Mastectomy (14-Nov-2014)",
-        "id": 1
+        "cohortDefinitionId": 1,
+        "cohortDefinitionName": "Schizophrenia",
+        "cohortDefinitionDescription": "Demo - Patients with a history of schizohphrenia by diagnosis",
+        "definitionTypeConceptId": 0,
+        "cohortDefinitionSyntax": "here is some great json code",
+        "subjectConceptId": 0,
+        "cohortInitiationDate": "2014-09-12"
     },
     {
-        "name": "Cervical Cancer In-Situ",
-        "description": "Patients with a cervical cancer in-situ (12-Jan-2015)",
-        "id": 2
+        "cohortDefinitionId": 2,
+        "cohortDefinitionName": "Type 2 Diabetes",
+        "cohortDefinitionDescription": "Demo - Patients with medication or diagnosis evidence of diabetes",
+        "definitionTypeConceptId": 0,
+        "cohortDefinitionSyntax": "here is some more great json code",
+        "subjectConceptId": 0,
+        "cohortInitiationDate": "2014-11-12"
     },
     {
-        "name": "Diabetes Mellitus",
-        "description": "Created on 31-Oct-2014 by Ryan, Patrick",
-        "id": 3
+        "cohortDefinitionId": 3,
+        "cohortDefinitionName": "Post-Partum Depression",
+        "cohortDefinitionDescription": "Demo - Patients with evidence of Post-Partum depression by diagnosis or NLP",
+        "definitionTypeConceptId": 0,
+        "cohortDefinitionSyntax": "even better json code",
+        "subjectConceptId": 0,
+        "cohortInitiationDate": "2014-05-12"
     },
     {
-        "name": "Schizophrenia",
-        "description": "Created on 4-Nov-2014 by Stang, Paul",
-        "id": 4
-    },
-    {
-        "name": "Diabetes Mellitus Poorly Controlled",
-        "description": "Created on 14-Nov-2014 by Matcho, Amy",
-        "id": 5
+        "cohortDefinitionId": 4,
+        "cohortDefinitionName": "Dementia",
+        "cohortDefinitionDescription": "Demo - Patients with Alzheimer's or Cognitive decline",
+        "definitionTypeConceptId": 0,
+        "cohortDefinitionSyntax": "super json code",
+        "subjectConceptId": 0,
+        "cohortInitiationDate": "2014-02-12"
     }
 ]

@@ -167,14 +167,16 @@
 			</plugin>
 		</plugins>
 		
-		<profiles>
-			<profile>
-				<id>demo</id>
-				<properties>
-					<demo.mode>true</demo.mode>
-				</properties>
-			</profile>
-		</profiles>
+
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>demo</id>
+			<properties>
+				<demo.mode>true</demo.mode>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>

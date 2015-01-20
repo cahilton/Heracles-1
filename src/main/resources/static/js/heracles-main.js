@@ -50,6 +50,14 @@ jQuery.fn.multiselect = function() {
     });
 };
 
+function getWebApiUrl() {
+	return $("#webapi-url").val();
+}
+
+function isDemoMode() {
+	return ($("#demo-mode").val() === "true");
+}
+
 function toggleVisibleReports(checked, selector) {
     $(selector).find("input[type='checkbox']:visible").prop('checked', checked);
 }
@@ -60,19 +68,27 @@ function split(val) {
 }
 
 $(document).ready(function() {
+	
+	var cohortDefUrl;
+	if (isDemoMode()) {
+		cohortDefUrl = '/data/sample-cohorts.json';
+	} else {
+		cohortDefUrl = getWebApiUrl() + '/cohort/cohort';
+	}
 
 	// initialize the cohort type ahead, constructs the suggestion engine
     var bloodhoundCohorts = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('cohortDefinitionName'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 20,
-        // use /data/sample-cohorts.json just to start off
-        prefetch: '/data/sample-cohorts.json',
+        limit: 10,
+        // if we get to have a lot of cohorts, prefetch may not work, and we'll have to use remote
+        prefetch: cohortDefUrl
     });
+    
     bloodhoundCohorts.initialize();
     
     // initialize bootstrap data toggle
-    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    $("body").tooltip({ selector:'[data-toggle=tooltip]' });
 
     // typeahead cohort listener
     $('#cohorts-typeahead .typeahead').typeahead({
@@ -89,13 +105,13 @@ $(document).ready(function() {
                 'Unable to find any cohorts that match the current query',
                 '</div>'
             ].join('\n'),
-            suggestion: Handlebars.compile('<p><strong>{{name}}</strong> – {{description}}</p>')
+            suggestion: Handlebars.compile('<p><strong>{{cohortDefinitionName}}</strong> – {{cohortDefinitionDescription}}</p>')
         }
     });
     
     // on select a cohort
     $("#cohorts-typeahead").bind('typeahead:selected', function(obj, datum, name) {
-        $("#cohorts").val(datum.name);
+        $("#cohorts").val(datum.cohortDefinitionName);
 
         $(".page-one").slideUp("fast", function() {
         	// set page data

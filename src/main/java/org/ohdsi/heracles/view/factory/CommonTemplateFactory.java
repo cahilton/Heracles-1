@@ -26,7 +26,7 @@ public class CommonTemplateFactory {
 	private String htmlLang;
 	
 	@Value("${demo.mode}")
-	private String demoMode;
+	private boolean demoMode;
 	
 	
 	/**

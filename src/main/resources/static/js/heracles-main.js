@@ -133,6 +133,15 @@ $(document).ready(function() {
           $("input[parent='" + $(this).val() + "']:visible").prop("checked", checked);
     });
 
+    // add event listeners to show multiselect divs
+    $(".auto-filter-check-list-input")
+	    .focus(function() {
+	    	var key = $(this).attr("filter-key");
+	    	$(".multiselect-wrapper[filter-key='" + key + "']").slideDown("slow");
+	    }).blur(function() {
+	    	var key = $(this).attr("filter-key");
+	    	$(".multiselect-wrapper[filter-key='" + key + "']").slideUp("slow");
+	    });
 
     // focus on input box
     setTimeout(function(){

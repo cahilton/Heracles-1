@@ -4,28 +4,30 @@
 		<div class="col-md-10">
 			<span class="toggle-filter-span" filter-key="$filterKey">
 				 <input placeholder="Type to filter..." type="text" class="form-control auto-filter-check-list-input" style="margin-top:8px" filter-key="$filterKey"/>
-			     <div class="multiselect form-control" style="margin:3px;height:150px;overflow-y:auto;width:100%;" filter-key="$filterKey">
-			     	<div ng-repeat="$ngRepeat">
-				     	<label class="toggle-parent-label" key="{{k}}">
-				     		<!-- <input type="checkbox" class="toggle-checkbox-parent-item" filter-key="$filterKey"
-								style="margin:4px" value="{{k}}"/>-->
-							{{k}}
-						</label>
-						<div ng-repeat="item in v">
-							<label class="toggle-child-label" >
-								<input type="checkbox" class="toggle-checkbox-item"
-									style="margin:2px" filter-key="$filterKey" value="{{item.name}}" id="{{item.id}}" parent="{{k}}" />{{item.name}}
-							</label>  
+				 <div class="multiselect-wrapper" style="display:none;" filter-key="$filterKey">
+				     <div class="multiselect form-control" style="margin:3px;height:150px;overflow-y:auto;width:100%;" filter-key="$filterKey">
+				     	<div ng-repeat="$ngRepeat">
+					     	<label class="toggle-parent-label" key="{{k}}">
+					     		<!-- <input type="checkbox" class="toggle-checkbox-parent-item" filter-key="$filterKey"
+									style="margin:4px" value="{{k}}"/>-->
+								{{k}}
+							</label>
+							<div ng-repeat="item in v">
+								<label class="toggle-child-label" >
+									<input type="checkbox" class="toggle-checkbox-item"
+										style="margin:2px" filter-key="$filterKey" value="{{item.name}}" id="{{item.id}}" parent="{{k}}" />{{item.name}}
+								</label>  
+							</div>
 						</div>
-					</div>
-			
+				
+				     </div>
+				     <span style="float:right">
+					        <div class="btn-group btn-group-xs">
+					           <button type="button" class="btn btn-default auto-filter-check-list-select" filter-key="$filterKey" >Check current</button>
+					           <button type="button" class="btn btn-default auto-filter-check-list-clear" filter-key="$filterKey">Uncheck current</button>
+					        </div>
+				     </span>
 			     </div>
-			     <span style="float:right">
-				        <div class="btn-group btn-group-xs">
-				           <button type="button" class="btn btn-default auto-filter-check-list-select" filter-key="$filterKey" >Check current</button>
-				           <button type="button" class="btn btn-default auto-filter-check-list-clear" filter-key="$filterKey">Uncheck current</button>
-				        </div>
-			     </span>
 			</span>
 		</div>
 		<div class="col-md-2">
@@ -63,7 +65,7 @@
         <div id="cohort-explorer-main" class="row" style="display:none" ng-controller="CohortExplorerCtrl">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="row">
+                <div class="row" style="padding-top:3px"a>
                     <div class="col-md-12">
                         <a id="cohort-explorer-back">&laquo;Back</a>
                     </div>

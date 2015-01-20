@@ -1,4 +1,5 @@
 var colorRange = ["#AF0C3C", "#290F2E" , "#0E7184", "#F0D31A", "#FE7D0D"];
+var hiddenDivHeight = 250;
 
 function translateJsonDataToArray(dataIn) {
 	var data = {};
@@ -16,12 +17,17 @@ function translateJsonDataToArray(dataIn) {
 	return data;
 }
 
+function getCurrentMaxHeight() {
+	return (($("#cohort-explorer-summary").height() + hiddenDivHeight) / 2) - 50;
+	
+}
+
 function showAgeDistribution(ageData) {
 	var data = translateJsonDataToArray(ageData);
 	
 	$("#age_dist").empty();
 	
-	var w = Math.max(($("#cohort-explorer-summary").height() / 2 - 50), 150);
+	var w = Math.max(getCurrentMaxHeight(), 150);
 	var r = w/2;
 	var color = d3.scale.ordinal()
 	  .domain(data.keys)
@@ -96,7 +102,7 @@ function showGenderDistribution(genderData) {
 	
 	var barWidth = 60;
 	var width = (barWidth + 10) * data.length;
-	var height = Math.max(($("#cohort-explorer-summary").height() / 2 - 50), 150);
+	var height = Math.max(getCurrentMaxHeight(), 150);
 
 	var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
 	var y = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.value; })]).

@@ -1,3 +1,4 @@
+var activeFilter = undefined;
 jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
     return this.each(function() {
         var select = this;
@@ -136,12 +137,36 @@ $(document).ready(function() {
     // add event listeners to show multiselect divs
     $(".auto-filter-check-list-input")
 	    .focus(function() {
-	    	var key = $(this).attr("filter-key");
-	    	$(".multiselect-wrapper[filter-key='" + key + "']").slideDown("slow");
-	    }).blur(function() {
-	    	var key = $(this).attr("filter-key");
-	    	$(".multiselect-wrapper[filter-key='" + key + "']").slideUp("slow");
+	    	// hide all then show active 
+	    	activeFilter = $(this).attr("filter-key");
+	    	// hide up other active filters
+	    	$(".multiselect-wrapper[filter-key!='" + activeFilter + "']:visible").slideUp("slow");
+	    	// show current active filters
+	    	$(".multiselect-wrapper[filter-key='" + activeFilter + "']").slideDown("slow");
+	    	
 	    });
+    
+    $("body").click(function(e) {
+    	// if click outside the active filter, then hide that div
+    	var hideFilter = true;
+    	var click = $(e.target);
+    	// look at self
+    	if (click.attr("filter-key") && click.attr("filter-key") === activeFilter) {
+    		hideFilter = false;
+    	}
+    	// look at parents
+    	var clickParentFilter = (click.parents(".multiselect-wrapper").attr("filter-key"));
+		if (clickParentFilter && clickParentFilter === activeFilter) {
+			hideFilter = false;
+		}
+	
+    	if (hideFilter) {
+    		if (activeFilter) {
+    			$(".multiselect-wrapper[filter-key='" + activeFilter + "']").slideUp("slow");
+    			activeFilter = undefined;
+    		}
+    	} 
+    })
 
     // focus on input box
     setTimeout(function(){

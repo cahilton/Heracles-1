@@ -25,6 +25,9 @@ public class CommonTemplateFactory {
 	@Value("${html.lang}")
 	private String htmlLang;
 	
+	@Value("${demo.mode}")
+	private String demoMode;
+	
 	
 	/**
 	 * Creates a common velocity template with the head, body, script and css includes
@@ -45,6 +48,7 @@ public class CommonTemplateFactory {
 				name : pageTitle);
 		modelAndView.addObject("innerTemplate", String.format("templates/%s.vm", innerTemplateName));
 		modelAndView.addObject("homePath", "/home/index.html");
+		modelAndView.addObject("demoMode", demoMode);
 		modelAndView.addObject("htmlLang", htmlLang);
 		
 		

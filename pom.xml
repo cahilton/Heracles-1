@@ -27,6 +27,7 @@
 		<webapi.url>http://localhost:8080/WebAPI</webapi.url>
 		<html.lang>en-US</html.lang>
 		<server.port>14000</server.port>
+		<demo.mode>false</demo.mode>
 	</properties>
 	
 	<repositories>

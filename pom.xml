@@ -166,6 +166,15 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		<profiles>
+			<profile>
+				<id>demo</id>
+				<properties>
+					<demo.mode>true</demo.mode>
+				</properties>
+			</profile>
+		</profiles>
 	</build>
 
 </project>

@@ -5,7 +5,7 @@
 			<span class="toggle-filter-span" filter-key="$filterKey">
 				 <input placeholder="Type to filter..." type="text" class="form-control auto-filter-check-list-input" style="margin-top:8px" filter-key="$filterKey"/>
 				 <div class="multiselect-wrapper" style="display:none;" filter-key="$filterKey">
-				     <div class="multiselect form-control" style="margin:3px;height:150px;overflow-y:auto;width:100%;" filter-key="$filterKey">
+				     <div class="multiselect form-control" style="margin:3px;height:350px;overflow-y:auto;width:100%;" filter-key="$filterKey">
 				     	<div ng-repeat="$ngRepeat">
 					     	<label class="toggle-parent-label" key="{{k}}">
 					     		<!-- <input type="checkbox" class="toggle-checkbox-parent-item" filter-key="$filterKey"

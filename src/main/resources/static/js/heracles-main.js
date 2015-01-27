@@ -73,7 +73,7 @@ $(document).ready(function() {
 	if (isDemoMode()) {
 		cohortDefUrl = '/data/sample-cohorts.json';
 	} else {
-		cohortDefUrl = getWebApiUrl() + '/cohort/cohort';
+		cohortDefUrl = getWebApiUrl() + '/cohortdefinition';
 	}
 
 	// initialize the cohort type ahead, constructs the suggestion engine
